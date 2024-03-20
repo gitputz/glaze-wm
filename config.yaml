@@ -161,9 +161,10 @@ keybindings:
   - command: "binding mode resize"
     binding: "Alt+R"
 
-  # Change tiling direction. This determines where new tiling windows will be inserted.
+  # Change tiling direction. This determines where new tiling windows will be inserted. Commented lines indicate 'does not work'.
   - command: "tiling direction toggle"
     #binding: "Alt+Hyphen-Minus"
+    #binding: "Alt+00_0C" "-_"
     binding: "Alt+V"
 
 
