@@ -127,6 +127,9 @@ window_rules:
   # Applications and Workspaces
 
 
+  - command: "move to workspace 2"
+    match_process_name: "emacs"
+
   # Applications that launch as floating by default, set to tiling.
   # Example LibreWolf browser - commented lines don't work
   #- command: "set tiling"
