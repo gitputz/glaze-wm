@@ -60,6 +60,7 @@ bar:
       default_workspace_background: "transparent"
   components_center:
     - type: "window title"
+      padding: "0 8px"
   components_right:
     - type: "system tray"
     - type: "network"
@@ -70,6 +71,7 @@ bar:
       label_wifi_strength_50: "WiFi: 50%"
       label_wifi_strength_75: "WiFi: 75%"
       label_wifi_strength_100: "WiFi: 100%"
+      padding: "0 8px"
     - type: "battery"
       label_draining: "{battery_level}% remaining"
       label_power_saver: "{battery_level}% (power saver)"
@@ -269,4 +271,3 @@ keybindings:
     binding: "Alt+Shift+8"
   - commands: ["move to workspace 9", "focus workspace 9"]
     bindings: ["Alt+Shift+9"]
-
