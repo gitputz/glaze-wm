@@ -127,7 +127,7 @@ window_rules:
   # Applications and Workspaces
 
 
-  - command: "move to workspace 2"
+  - command: "move to workspace 1"
     match_process_name: "emacs"
 
   # Applications that launch as floating by default, set to tiling.
@@ -141,8 +141,8 @@ window_rules:
       #    windows:
       #      - title: "librewolf.exe"
       #        mode: tiled
-  - command: "resize borders 0px -7px -7px -7px"
-    #- command: "move to workspace 3"
+      #- command: "resize borders 0px -7px -10px -7px"
+  - command: "move to workspace 4"
     match_process_name: "librewolf"
 
   # Example from another's config.yaml
