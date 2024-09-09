@@ -95,30 +95,53 @@ window_rules:
       - window_process: { equals: 'Lively' }
         window_class: { regex: 'HwndWrapper*' }
 
-binding_modes:
-  # When enabled, the focused window can be nesized via arrow keys or HJKL.
-  - name: 'resize'
-    keybindings:
-      - commands: ['resize --width -2%']
-        bindings: ['h', 'left']
-      - commands: ['resize --width +2%']
-        bindings: ['l', 'right']
-      - commands: ['resize --height +2%']
-        bindings: ['k', 'up']
-      - commands: ['resize --height -2%']
-        bindings: ['j', 'down']
-      # Press enter/escape to return to default keybindings.
-      - commands: ['wm-disable-binding-mode --name resize']
-        bindings: ['escape', 'enter']
 
-  # When enabled, all keybindings are disabled except for alt+shift+p which
-  # returns to default keybindings.
-  - name: 'pause'
-    keybindings:
-      - commands: ['wm-disable-binding-mode --name pause']
-        bindings: ['alt+shift+p']
+  - commands: ["move --workspace 2"]
+    match:
+      # Move msedge browser to workspace 2.
+      - window_process: { regex: "msedge" }
+
+  - commands: ["move --workspace 3"]
+    match:
+      # Move brave browser to workspace 3.
+      - window_process: { regex: "brave" }
+
+  - commands: ["move --workspace 4"]
+    match:
+      # Move firefox browser to workspace 4.
+      - window_process: { regex: "firefox" }
+
+
+binding_modes:
+          #  # When enabled, the focused window can be nesized via arrow keys or HJKL.
+          #  - name: 'resize'
+          #    keybindings:
+          #      - commands: ['resize --width -2%']
+          #        bindings: ['h', 'left']
+          #      - commands: ['resize --width +2%']
+          #        bindings: ['l', 'right']
+          #      - commands: ['resize --height +2%']
+          #        bindings: ['k', 'up']
+          #      - commands: ['resize --height -2%']
+          #        bindings: ['j', 'down']
+          #      # Press enter/escape to return to default keybindings.
+          #      - commands: ['wm-disable-binding-mode --name resize']
+          #        bindings: ['escape', 'enter']
+          #
+          #  # When enabled, all keybindings are disabled except for alt+shift+p which
+          #  # returns to default keybindings.
+          #  - name: 'pause'
+          #    keybindings:
+          #      - commands: ['wm-disable-binding-mode --name pause']
+          #        bindings: ['alt+shift+p']
 
 keybindings:
+
+  # Launching applications
+  - commands: ['shell-exec C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe']
+    bindings: ['alt+b']
+  
+
   # Shift focus in a given direction.
   - commands: ['focus --direction left']
     bindings: ['alt+shift+h']
@@ -149,9 +172,9 @@ keybindings:
       #    bindings: ['alt+shift+j', 'alt+shift+down']
 
   # Resize focused window by a percentage or pixel amount.
-  - commands: ['resize --width -2%']
+  - commands: ['resize --width -3%']
     bindings: ['alt+shift+u']
-  - commands: ['resize --width +2%']
+  - commands: ['resize --width +3%']
     bindings: ['alt+shift+o']
       #  - commands: ['resize --height +2%']
       #    bindings: ['alt+p']
@@ -183,7 +206,7 @@ keybindings:
 
   # Change the focused window to be tiling.
   - commands: ['toggle-tiling']
-    bindings: ['alt+t']
+    bindings: ['alt+shift+t']
 
       #  # Change the focused window to be fullscreen.
       #  - commands: ['toggle-fullscreen']
@@ -213,17 +236,17 @@ keybindings:
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start CMD
   # Terminal and Git Bash respectively.
   - commands: ['shell-exec wt']
-    bindings: ['alt+enter']
+    bindings: ['alt+shift+enter']
 
-  # Focus the next/previous workspace defined in `workspaces` config.
-  - commands: ['focus --next-workspace']
-    bindings: ['alt+s']
-  - commands: ['focus --prev-workspace']
-    bindings: ['alt+a']
-
-  # Focus the workspace that last had focus.
-  - commands: ['focus --recent-workspace']
-    bindings: ['alt+d']
+      #  # Focus the next/previous workspace defined in `workspaces` config.
+      #  - commands: ['focus --next-workspace']
+      #    bindings: ['alt+s']
+      #  - commands: ['focus --prev-workspace']
+      #    bindings: ['alt+a']
+      #
+      #  # Focus the workspace that last had focus.
+      #  - commands: ['focus --recent-workspace']
+      #    bindings: ['alt+d']
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ['focus --workspace 1']
