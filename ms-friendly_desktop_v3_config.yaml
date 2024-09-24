@@ -147,10 +147,10 @@ keybindings:
   - commands: ["focus --direction right"]
     bindings: ["alt+shift+l"]
   - commands: ["focus --direction up"]
-    bindings: ["alt+shift+k", "alt+up"]
+    bindings: ["alt+shift+k"]
   - commands: ["focus --direction down"]
     bindings:
-      ["alt+shift+j", "alt+down"]
+      ["alt+shift+j"]
 
       #  - commands: ['focus --direction left']
       #    bindings: ['alt+h', 'alt+left']
