@@ -1,7 +1,7 @@
 general:
   # Commands to run when the WM has started (e.g. to run a script or launch
   # another application). Here we are running a batch script to start Zebar.
-  startup_commands: ["shell-exec %userprofile%/.glzr/zebar/start.bat"]
+  # startup_commands: ["shell-exec %userprofile%/.glzr/zebar/start.bat"]
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
@@ -94,6 +94,11 @@ window_rules:
       - window_process: { equals: "PowerToys.PowerAccent" }
       - window_process: { equals: "Lively" }
         window_class: { regex: "HwndWrapper*" }
+
+  - commands: ["move --workspace 1"]
+    match:
+      # Move visual studio code to workspace 1.
+      - window_process: { regex: "code" }
 
   - commands: ["move --workspace 2"]
     match:
